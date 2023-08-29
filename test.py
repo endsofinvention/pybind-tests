@@ -13,10 +13,10 @@ Copyright 2023 - 2023 Scope Logistical Solutions, Scope Logistical Solutions
 import sys
 sys.path.append("build/")
 # from PyBindTestLib import greetingClass
-import PyBindTestLib
+from PyBindTestLib import greetingClass
 
 
-greet = PyBindTestLib.greetingClass()
+greet = greetingClass()
 print(greet.getGreeting())
 
 

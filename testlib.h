@@ -11,7 +11,7 @@
  */
 
 #include <string>
-
+#include "adder.h"
 using namespace std;
 
 class greetingClass 
@@ -21,7 +21,7 @@ public:
     greetingClass() {};
     std::string getGreeting ()
     {
-        return "Hello there!";
+        return "Hello there!" + add(23, 14);
     }
 };
 

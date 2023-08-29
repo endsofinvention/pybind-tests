@@ -11,10 +11,16 @@ set(CMAKE_PREFIX_PATH "/home/jec/applications/anaconda3/lib/python3.8/site-packa
 # set(CMAKE_PREFIX_PATH "/home/jec/applications/anaconda3/lib/python3.8/site-packages/pybind11/include/")
 find_package(pybind11 REQUIRED)
 
+add_subdirectory(mathfunc)
 pybind11_add_module(${PROJECT_NAME} pywrap.cpp)
-
 target_compile_definitions(${PROJECT_NAME} PRIVATE VERSION_INFO=${EXAMPLE_VERSION_INFO})
-target_include_directories(${PROJECT_NAME} PRIVATE ${PYBIND11_INCLUDE_DIRS})
+target_include_directories(${PROJECT_NAME} PRIVATE ${PYBIND11_INCLUDE_DIRS}  "${PROJECT_BINARY_DIR}"
+"${PROJECT_SOURCE_DIR}/mathfunc")
+target_link_libraries(${PROJECT_NAME} PUBLIC mathfunc)
+
+
+
+
 
 
 
